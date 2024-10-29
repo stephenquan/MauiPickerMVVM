@@ -6,17 +6,17 @@
     xmlns:local="clr-namespace:MauiPickerMVVM"
     x:Name="this"
     x:DataType="local:MainPage"
+    BackgroundColor="#ffe"
     BindingContext="{Reference this}">
-
     <ScrollView>
         <VerticalStackLayout Padding="30,0" Spacing="25">
-            <!--  Picker not OK  -->
+            <Label Text="Picker (bug)" />
+            <!--<Label Text="Picker (Workaround)" />-->
             <Picker
                 x:Name="picker"
                 ItemDisplayBinding="{Binding DisplayName}"
                 ItemsSource="{Binding People}" />
-
-            <!--  CollectionView OK  -->
+            <Label Text="CollectionView (Ok)" />
             <CollectionView ItemsSource="{Binding People}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="local:Person">
@@ -24,8 +24,6 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

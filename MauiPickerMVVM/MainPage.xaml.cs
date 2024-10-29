@@ -1,8 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
-
 namespace MauiPickerMVVM;
-
 public partial class Person : ObservableObject
 {
     [ObservableProperty]
@@ -16,7 +14,6 @@ public partial class Person : ObservableObject
     string timeStamp = "HH:mm:ss";
     public string DisplayName => $"[{TimeStamp}] {FirstName} {LastName}";
 }
-
 public partial class MainPage : ContentPage
 {
     public ObservableCollection<Person> People { get; } = new()
@@ -25,7 +22,6 @@ public partial class MainPage : ContentPage
         new Person { FirstName = "Jane", LastName = "Smith" },
         new Person { FirstName = "Sam", LastName = "Johnson" }
     };
-
     IDispatcherTimer timer;
     public MainPage()
     {
